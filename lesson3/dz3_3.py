@@ -1,20 +1,39 @@
 """
-Реализовать функцию, принимающую несколько параметров, описывающих данные
-пользователя: имя, фамилия, год рождения, город проживания, email, телефон. Функция
-должна принимать параметры как именованные аргументы. Реализовать вывод данных о
-пользователе одной строкой.
+3. Реализовать функцию my_func(), которая принимает три позиционных аргумента, 
+и возвращает сумму наибольших двух аргументов.
 """
 
 
-def print_user(name, lname, year, town, mail, phone):
-    print(f'имя: {name}, фамилия: {lname}, год рождения: {year}, город: {town}, e-mail: {mail}, телефон: {phone}')
+# вариант 1
+
+def my_func(var1, var2, var3):
+    if var1 <= var2 <= var3:
+        return var2 + var3
+    elif var2 <= var1 <= var3:
+        return var1 + var3
+    elif var3 <= var2 <= var1:
+        return var2 + var1
+    elif var2 <= var3 <= var1:
+        return var3 + var1
+    elif var3 <= var1 <= var2:
+        return var1 + var2
+    elif var1 <= var3 <= var2:
+        return var3 + var2
 
 
-a = input('Введите имя: ')
-b = input('Введите фамилию: ')
-c = input('Введите год рождения: ')
-d = input('Введите город: ')
-e = input('Введите e-mail: ')
-g = input('Введите телефон: ')
+var1 = int(input('Введите число 1: '))
+var2 = int(input('Введите число 2: '))
+var3 = int(input('Введите число 3: '))
 
-print_user(year=c, lname=b, name=a, town=d, mail=e, phone=g)
+print('Cумма наибольших = ', my_func(var1, var2, var3))
+
+
+# вариант 2
+def summ_sort(var1, var2, var3):
+    l = [var1, var2, var3]
+    l.sort()
+    return l[2] + l[1]
+
+
+print('Cумма наибольших = ', summ_sort(var1, var2, var3))
+
