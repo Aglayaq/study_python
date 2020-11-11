@@ -1,0 +1,4 @@
+This is a first string!
+This is a second.
+And this, is a third.
+What do you think?
